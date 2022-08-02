@@ -1,4 +1,4 @@
-package kg.junesqo.newsapp
+package kg.junesqo.newsapp.models
 
 data class NewsResponse(
     val articles: List<Article>,

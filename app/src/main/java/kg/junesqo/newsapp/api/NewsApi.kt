@@ -1,6 +1,6 @@
 package kg.junesqo.newsapp.api
 
-import kg.junesqo.newsapp.NewsResponse
+import kg.junesqo.newsapp.models.NewsResponse
 import kg.junesqo.newsapp.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET
