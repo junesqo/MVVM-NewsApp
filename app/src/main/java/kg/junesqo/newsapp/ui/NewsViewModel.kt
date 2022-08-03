@@ -3,6 +3,7 @@ package kg.junesqo.newsapp.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kg.junesqo.newsapp.models.Article
 import kg.junesqo.newsapp.models.NewsResponse
 import kg.junesqo.newsapp.repository.NewsRepository
 import kg.junesqo.newsapp.util.Resource
@@ -48,6 +49,16 @@ class NewsViewModel(val newsRepository: NewsRepository) : ViewModel() {
             }
         }
         return Resource.Error(response.message())
+    }
+
+    fun saveArticle(article: Article) = viewModelScope.launch {
+        newsRepository.upsert(article)
+    }
+
+    fun getSavedNews() = newsRepository.getSavedNews()
+
+    fun deleteArticle(article: Article) = viewModelScope.launch {
+        newsRepository.deleteArticle(article)
     }
 
 }
